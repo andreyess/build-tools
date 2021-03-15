@@ -1,0 +1,41 @@
+apply plugin: 'java'
+
+repositories {
+   jcenter()
+}
+
+dependencies {
+   compile "log4j:log4j:1.2.17"
+   compile 'junit:junit:4.12'
+   compile 'org.apache.commons:commons-collections4:4.4'
+}
+
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) },
+      'Main-Class': 'com.test.Project'
+    )
+  }
+}
+
+
+task 'build-custom' (type: Jar, description: 'It will is building .jar file') {
+    manifest{
+        attributes("Main-Class": 'com.test.Project')
+    }
+    archiveBaseName = "home-task"
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+task 'test-custom' (type: Exec,description: 'This task is running tests after .jar building') {
+    commandLine "gradle", "test"
+    dependsOn 'build'
+}
+
+task 'hello' (type: JavaExec,description: 'This task is running compiled .jar file after tests'){
+    classpath jar.archiveFile.get()
+    dependsOn 'test-custom'
+}
