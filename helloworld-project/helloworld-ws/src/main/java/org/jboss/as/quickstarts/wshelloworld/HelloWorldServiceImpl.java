@@ -31,9 +31,20 @@ import javax.jws.WebService;
 public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
-    public String sayHello() {
-        return "Hello World!";
+    public String sayHi() {
+        return "Hi!";
     }
+
+    @Override
+    public String sayZhive() {
+        return "Zhive!";
+    }
+
+    @Override
+    public String sayTheBestCountryInTheWorld() {
+        return "Belarus!";
+    }
+
 
     @Override
     public String sayHelloToName(final String name) {
@@ -47,6 +58,9 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHelloToNames(final List<String> names) {
+        sayZhive();
+        sayTheBestCountryInTheWorld();
+
         return "Hello " + createNameListString(names);
     }
 
