@@ -102,8 +102,8 @@
                     <nexusUrl>http://nexus.akarpyza.lab.playpit.by/</nexusUrl>
                 </configuration>
             </plugin>
-        </plugins> -->
-        <!-- Set the name of the WAR, used as the context root when the app is deployed 
+        </plugins> 
+        <!-- Set the name of the WAR, used as the context root when the app is deployed -->
         <finalName>${project.artifactId}</finalName>
     </build>
 
