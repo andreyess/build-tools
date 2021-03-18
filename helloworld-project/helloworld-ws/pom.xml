@@ -99,7 +99,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>nexus</serverId>
-                    <nexusUrl>http://nexus.akarpyza.lab.playpit.by/</nexusUrl>
+                    <nexusUrl>http://nexus.akarpyza.lab.playpit.by/repository/artifacts_hosted/</nexusUrl>
                 </configuration>
             </plugin>
         </plugins> 
