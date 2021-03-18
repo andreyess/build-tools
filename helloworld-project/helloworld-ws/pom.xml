@@ -43,12 +43,12 @@
     </properties>
 
 
-<!--    <distributionManagement>
+    <distributionManagement>
 	    <snapshotRepository>
 		    <id>nexus</id>
 		    <url>http://nexus.akarpyza.lab.playpit.by/repository/artifacts_hosted/</url>
 	    </snapshotRepository>
-    </distributionManagement> -->
+    </distributionManagement> 
 
 
     <dependencies>
@@ -91,7 +91,7 @@
     </dependencies>
 
     <build>
-<!--       <plugins>
+        <plugins>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -103,7 +103,7 @@
                 </configuration>
             </plugin>
         </plugins> -->
-        <!-- Set the name of the WAR, used as the context root when the app is deployed -->
+        <!-- Set the name of the WAR, used as the context root when the app is deployed 
         <finalName>${project.artifactId}</finalName>
     </build>
 
