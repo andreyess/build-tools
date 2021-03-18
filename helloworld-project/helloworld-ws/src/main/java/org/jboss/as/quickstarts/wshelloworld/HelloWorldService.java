@@ -34,14 +34,6 @@ public interface HelloWorldService {
      *
      * @return A simple hello world message
      */
-    @WebMethod
-    String sayHi();
-
-    @WebMethod
-    String sayZhive();
-
-    @WebMethod
-    String sayTheBestCountryInTheWorld();
 
     @WebMethod
     String sayHello();

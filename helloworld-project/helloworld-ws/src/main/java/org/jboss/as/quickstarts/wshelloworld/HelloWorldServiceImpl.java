@@ -30,20 +30,6 @@ import javax.jws.WebService;
     targetNamespace = "http://www.jboss.org/eap/quickstarts/wshelloworld/HelloWorld")
 public class HelloWorldServiceImpl implements HelloWorldService {
 
-    @Override
-    public String sayHi() {
-        return "Hi!";
-    }
-
-    @Override
-    public String sayZhive() {
-        return "Zhive!";
-    }
-
-    @Override
-    public String sayTheBestCountryInTheWorld() {
-        return "Belarus!";
-    }
 
     @Override
     public String sayHello() {
@@ -63,8 +49,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHelloToNames(final List<String> names) {
-        sayZhive();
-        sayTheBestCountryInTheWorld();
 
         return "Hello " + createNameListString(names);
     }
