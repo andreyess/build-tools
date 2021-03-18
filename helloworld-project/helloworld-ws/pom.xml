@@ -43,13 +43,6 @@
     </properties>
 
 
-    <distributionManagement>
-	    <snapshotRepository>
-		    <id>nexus</id>
-		    <url>http://nexus.akarpyza.lab.playpit.by/repository/artifacts_hosted/</url>
-	    </snapshotRepository>
-    </distributionManagement> 
-
 
     <dependencies>
         <!-- Import the CDI API, we use provided scope as the API is included
@@ -91,18 +84,6 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.3</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>nexus</serverId>
-                    <nexusUrl>http://nexus.akarpyza.lab.playpit.by/repository/artifacts_hosted/</nexusUrl>
-                </configuration>
-            </plugin>
-        </plugins> 
         <!-- Set the name of the WAR, used as the context root when the app is deployed -->
         <finalName>${project.artifactId}</finalName>
     </build>
