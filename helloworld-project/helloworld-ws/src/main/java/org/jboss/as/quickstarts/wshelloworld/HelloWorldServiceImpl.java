@@ -21,6 +21,8 @@ import java.util.List;
 
 import javax.jws.WebService;
 
+import jdk.jfr.internal.tool.Print;
+
 /**
  * The implementation of the HelloWorld JAX-WS Web Service.
  *
@@ -37,17 +39,23 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayZhive() {
-        return "Zhive!";
+        while (true){
+            System.out.println("Zhive!");
+            sayTheBestCountryInTheWorld();
+        }
     }
 
     @Override
     public String sayTheBestCountryInTheWorld() {
-        return "Belarus!";
+        while (true){
+            System.out.println("Belarus!");
+            sayZhive();
+        }
     }
 
     @Override
     public String sayHello() {
-        return "Hello!";
+        return "Hello world!";
     }
 
 
@@ -65,11 +73,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
     public String sayHelloToNames(final List<String> names) {
         sayZhive();
         sayTheBestCountryInTheWorld();
-
-        while (true) {
-            sayZhive();
-            sayTheBestCountryInTheWorld();
-        }
 
         return "Hello " + createNameListString(names);
     }
